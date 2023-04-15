@@ -1,0 +1,61 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    IEnumerable<string> strLista = new List<string> { "LAPTOP", "IMPRESORA", "ACCESORIOS", "PROYECTORES", "TINTAS" };
+}
+
+@{
+    IEnumerable<string> strLista2 = new List<string> {"2005", "2006", "2007", "2008","2009"};
+}
+
+<div class="row">
+    <div class="form-group">
+        <label>Nombre Equipo</label>
+        @Html.TextBox("txtNombre","",new{@class="form-control"})
+    </div>
+
+    <div class="form-group">
+        @Html.Label("lblDescripcion","Descripcion")
+        @Html.TextArea("txaDescripcion","",new {@class="form-control"})
+
+    </div>
+
+    <div class="form-group">
+        @Html.Label("lblModelo","Modelo")
+        @Html.TextBox("txtModelo","",new{@class="form-control"})
+    </div>
+
+    <div class="form-group">
+        @Html.Label("lblAnioCompra", "Año de compra")
+        @Html.DropDownList("ddlAnioCompra", new SelectList(strLista2),"Eliga una opcion")
+    </div>
+
+    <div class="form-group">
+        @Html.Label("lblCosto","Costo")
+        @Html.TextBox("txtCosto","",new{@class="form-control"})
+    </div>
+
+
+    <div class="form-group">
+        @Html.Label("lblVidaUtil","Vida Util")
+        @Html.TextBox("txtVidaUtil","",new{@class="form-control"})
+    </div>
+
+    <div class="form-group">
+        @Html.Label("lblTipoEquipo","Tipo de Equipo")
+        @Html.DropDownList("ddlTipoEquipo",new SelectList(strLista), "Seleccione un tipo")
+    </div>
+
+    <div class="form-group">
+        
+        @Html.CheckBox("Estado") Estado
+    </div>
+
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Guardar" />
+        @Html.ActionLink("Guardar","Guardar","Home")
+    </div>
+</div>

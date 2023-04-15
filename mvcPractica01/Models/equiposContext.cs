@@ -17,5 +17,6 @@ namespace mvcPractica01.Models
         public DbSet<carreras> carreras { get; set; }
         public DbSet<facultades> facultades { get; set; }
         public DbSet<usuarios> usuarios { get; set; }
+        public DbSet<equipos> equipos { get; set; }
     }
 }
